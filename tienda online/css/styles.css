@@ -1,0 +1,363 @@
+/* ==========================================================
+   ESTILOS GENERALES DE LA PÁGINA
+   ========================================================== */
+   body {
+    font-family: 'Poppins', Arial, sans-serif; /* Tipografía principal */
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa; /* Fondo claro */
+    color: #333; /* Color base del texto */
+    width: 100%;
+    min-height: 100vh; /* Asegura que cubra toda la altura de la pantalla */
+}
+
+/* ==========================================================
+   CABECERA PRINCIPAL
+   ========================================================== */
+header {
+    background-color: #6c63ff; /* Fondo morado */
+    color: #fff; /* Texto blanco */
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave debajo */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em; /* Tamaño grande del título */
+}
+
+/* ==========================================================
+   SECCIÓN DE TODOS LOS PRODUCTOS
+   ========================================================== */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Grid responsive */
+    gap: 20px; /* Espacio entre tarjetas */
+    padding: 40px;
+    max-width: 1600px;
+    margin: 0 auto; /* Centrado horizontal */
+}
+
+/* Tarjeta de producto individual */
+.producto {
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08); /* Sombra suave */
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Animación de elevación */
+}
+
+/* Efecto al pasar el mouse sobre producto */
+.producto:hover {
+    transform: translateY(-8px); /* Elevar tarjeta */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15); /* Mayor sombra */
+}
+
+/* Imagen de producto */
+.producto img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Ajustar imagen sin deformar */
+    border-radius: 12px 12px 0 0; /* Bordes superiores redondeados */
+}
+
+/* Nombre del producto */
+.producto h2 {
+    font-size: 1.8em;
+    color: #222;
+    margin-top: 15px;
+}
+
+/* Precio del producto */
+.producto p {
+    font-size: 1.5em;
+    color: #666;
+    margin: 10px 0;
+}
+
+/* Botones de agregar al carrito y comprar */
+.producto button {
+    background-color: #6c63ff; /* Color morado */
+    color: white;
+    padding: 10px 25px;
+    margin: 8px 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    transition: background 0.3s, transform 0.2s; /* Animaciones en hover */
+}
+
+/* Efecto hover en botones de producto */
+.producto button:hover {
+    background-color: #574b90; /* Morado más oscuro */
+    transform: scale(1.05); /* Agrandamiento leve */
+}
+
+/* Estilos base */
+.productos {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los productos bajen a la siguiente línea */
+    justify-content: center; /* Centra los productos */
+    gap: 20px; /* Espacio entre productos */
+    padding: 20px;
+  }
+  
+  .producto {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    width: 250px; /* Ancho fijo de los productos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .producto:hover {
+    transform: translateY(-5px);
+  }
+  
+  .producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* Adaptación a dispositivos más pequeños */
+  @media (max-width: 768px) {
+    .producto {
+      width: 45%; /* Dos productos por fila en tablets */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .producto {
+      width: 100%; /* Un producto por fila en móviles */
+    }
+  }
+  
+
+/* ==========================================================
+   SECCIÓN DEL CARRITO DE COMPRAS
+   ========================================================== */
+#carrito {
+    background-color: #fff;
+    padding: 30px;
+    margin: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08); /* Sombra del contenedor */
+}
+
+/* Título del carrito */
+#carrito h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: #6c63ff; /* Color morado */
+}
+
+/* Lista de productos del carrito */
+#carrito ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Ítems individuales del carrito */
+#carrito ul li {
+    padding: 12px;
+    border-bottom: 1px solid #eee; /* Separador */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Total del carrito */
+#carrito #total {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #6c63ff;
+}
+
+/* Botón de pago */
+#carrito button {
+    background-color: #007bff; /* Azul fuerte */
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+/* Efecto hover en botón de pagar */
+#carrito button:hover {
+    background-color: #0056b3; /* Azul más oscuro */
+    transform: scale(1.05);
+}
+
+/* ==========================================================
+   RESPONSIVE - ADAPTACIÓN A DISPOSITIVOS MÓVILES
+   ========================================================== */
+   @media screen and (max-width: 1024px) {
+    .productos {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Más fluido en pantallas medianas */
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .productos {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Dos columnas en tablet */
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2.2em; /* Reducir título */
+    }
+
+    #carrito-panel {
+        width: 80%; /* Carrito más ancho en tablet */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .productos {
+        grid-template-columns: 1fr; /* Solo un producto por fila en móvil */
+    }
+
+    #carrito-panel {
+        width: 90%; /* Carrito aún más ancho en móviles */
+    }
+}
+
+
+/* ==========================================================
+   ICONO FLOTANTE DE CARRITO
+   ========================================================== */
+#icono-carrito {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #6c63ff;
+    color: white;
+    padding: 15px;
+    border-radius: 50%; /* Círculo */
+    cursor: pointer;
+    font-size: 1.8em;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hover en icono de carrito */
+#icono-carrito:hover {
+    background-color: #574b90;
+    transform: scale(1.1);
+}
+
+/* ==========================================================
+   PANEL LATERAL DE CARRITO (OCULTO / ABIERTO)
+   ========================================================== */
+#carrito-panel {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Fuera de la vista inicialmente */
+    width: 350px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -4px 0 8px rgba(0,0,0,0.2);
+    padding: 20px;
+    transition: right 0.4s ease; /* Suavidad al abrir */
+    z-index: 999;
+    overflow-y: auto; /* Scroll si hay muchos productos */
+}
+
+/* Carrito abierto */
+#carrito-panel.abierto {
+    right: 0;
+}
+
+/* Botón para cerrar carrito */
+#cerrar-carrito {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+/* ==========================================================
+   ALERTA DE PRODUCTO AGREGADO AL CARRITO
+   ========================================================== */
+.alerta-agregado {
+    position: fixed;
+    top: 80px;
+    right: 30px;
+    background-color: #28a745; /* Verde éxito */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    opacity: 0;
+    animation: aparecerDesaparecer 2s forwards;
+    z-index: 1100;
+}
+
+/* Animación para aparecer y desaparecer la alerta */
+@keyframes aparecerDesaparecer {
+    0% { opacity: 0; transform: translateY(-20px);}
+    10% { opacity: 1; transform: translateY(0);}
+    90% { opacity: 1; transform: translateY(0);}
+    100% { opacity: 0; transform: translateY(-20px);}
+}
+
+/* ==========================================================
+   LISTA DETALLADA DE PRODUCTOS EN CARRITO LATERAL
+   ========================================================== */
+#lista-carrito {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-carrito li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Imagen pequeña de producto en carrito */
+#lista-carrito img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* Botón para eliminar producto individual del carrito */
+#lista-carrito button {
+    margin-left: auto;
+    background-color: #7f5af0; /* Morado claro */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Hover del botón de eliminar producto */
+#lista-carrito button:hover {
+    background-color: #6c4cd3; /* Morado más oscuro */
+}
+
